@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1420" height="650" viewBox="0 0 1420 650">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="209.0" y="38.0" font-family="Georgia, Times New Roman, serif" font-size="25" font-weight="bold" text-anchor="middle" fill="#303236">Environmental Perturbation</text>
+<rect x="46.0" y="70" width="15" height="15" rx="1.5" fill="#bacddb"/>
+<text x="67.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="13.5" font-weight="normal" text-anchor="start" fill="#303236">FastWAM</text>
+<rect x="136.0" y="70" width="15" height="15" rx="1.5" fill="#89aeca"/>
+<text x="157.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="13.5" font-weight="normal" text-anchor="start" fill="#303236">FastWAM-Joint</text>
+<rect x="260.0" y="70" width="15" height="15" rx="1.5" fill="#4680ac"/>
+<text x="281.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="13.5" font-weight="normal" text-anchor="start" fill="#303236">Simple-WAM</text>
+<line x1="88" y1="540.0" x2="364" y2="540.0" stroke="#e2e5e9" stroke-width="1"/>
+<text x="79.0" y="545.0" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">0</text>
+<line x1="88" y1="455.9" x2="364" y2="455.9" stroke="#e2e5e9" stroke-width="1"/>
+<text x="79.0" y="460.9" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">25</text>
+<line x1="88" y1="371.8" x2="364" y2="371.8" stroke="#e2e5e9" stroke-width="1"/>
+<text x="79.0" y="376.8" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">50</text>
+<line x1="88" y1="287.7" x2="364" y2="287.7" stroke="#e2e5e9" stroke-width="1"/>
+<text x="79.0" y="292.7" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">75</text>
+<line x1="88" y1="203.6" x2="364" y2="203.6" stroke="#e2e5e9" stroke-width="1"/>
+<text x="79.0" y="208.6" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">100</text>
+<line x1="88" y1="170" x2="88" y2="540" stroke="#555" stroke-width="1.2"/>
+<line x1="88" y1="540" x2="364" y2="540" stroke="#555" stroke-width="1.2"/>
+<text x="52.0" y="355.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="normal" text-anchor="middle" fill="#303236" transform="rotate(-90 52 355.0)">Success Rate (%)</text>
+<rect x="181.0" y="359.0" width="30.0" height="181.0" fill="#bacddb" stroke="#ffffff" stroke-width="0.8"/>
+<text x="196.0" y="351.0" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">53.8</text>
+<rect x="211.0" y="312.3" width="30.0" height="227.7" fill="#89aeca" stroke="#ffffff" stroke-width="0.8"/>
+<text x="220.0" y="294.3" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">67.7</text>
+<rect x="241.0" y="272.6" width="30.0" height="267.4" fill="#4680ac" stroke="#ffffff" stroke-width="0.8"/>
+<text x="262.0" y="234.6" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">79.5</text>
+<text x="226.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">LIBERO-Plus</text>
+<text x="226.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">Average</text>
+<text x="615.0" y="38.0" font-family="Georgia, Times New Roman, serif" font-size="25" font-weight="bold" text-anchor="middle" fill="#303236">Data Efficiency</text>
+<rect x="420.0" y="69" width="17" height="17" rx="1.5" fill="#c0d4ce"/>
+<text x="444.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="15.5" font-weight="normal" text-anchor="start" fill="#303236">FastWAM</text>
+<rect x="560.0" y="69" width="17" height="17" rx="1.5" fill="#93beb1"/>
+<text x="584.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="15.5" font-weight="normal" text-anchor="start" fill="#303236">FastWAM-Joint</text>
+<rect x="700.0" y="69" width="17" height="17" rx="1.5" fill="#559b86"/>
+<text x="724.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="15.5" font-weight="normal" text-anchor="start" fill="#303236">Simple-WAM</text>
+<line x1="449" y1="540.0" x2="815" y2="540.0" stroke="#e2e5e9" stroke-width="1"/>
+<text x="440.0" y="545.0" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">0</text>
+<line x1="449" y1="455.9" x2="815" y2="455.9" stroke="#e2e5e9" stroke-width="1"/>
+<text x="440.0" y="460.9" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">25</text>
+<line x1="449" y1="371.8" x2="815" y2="371.8" stroke="#e2e5e9" stroke-width="1"/>
+<text x="440.0" y="376.8" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">50</text>
+<line x1="449" y1="287.7" x2="815" y2="287.7" stroke="#e2e5e9" stroke-width="1"/>
+<text x="440.0" y="292.7" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">75</text>
+<line x1="449" y1="203.6" x2="815" y2="203.6" stroke="#e2e5e9" stroke-width="1"/>
+<text x="440.0" y="208.6" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">100</text>
+<line x1="449" y1="170" x2="449" y2="540" stroke="#555" stroke-width="1.2"/>
+<line x1="449" y1="540" x2="815" y2="540" stroke="#555" stroke-width="1.2"/>
+<text x="413.0" y="355.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="normal" text-anchor="middle" fill="#303236" transform="rotate(-90 413 355.0)">Success Rate (%)</text>
+<rect x="471.6" y="277.0" width="25.6" height="263.0" fill="#c0d4ce" stroke="#ffffff" stroke-width="0.8"/>
+<text x="484.4" y="269.0" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">78.2</text>
+<rect x="497.2" y="232.2" width="25.6" height="307.8" fill="#93beb1" stroke="#ffffff" stroke-width="0.8"/>
+<text x="504.0" y="214.2" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">91.5</text>
+<rect x="522.8" y="229.2" width="25.6" height="310.8" fill="#559b86" stroke="#ffffff" stroke-width="0.8"/>
+<text x="541.6" y="191.2" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">92.4</text>
+<text x="510.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">LIBERO</text>
+<text x="510.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">5-Shot</text>
+<rect x="593.6" y="242.3" width="25.6" height="297.7" fill="#c0d4ce" stroke="#ffffff" stroke-width="0.8"/>
+<text x="606.4" y="234.3" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">88.5</text>
+<rect x="619.2" y="213.7" width="25.6" height="326.3" fill="#93beb1" stroke="#ffffff" stroke-width="0.8"/>
+<text x="626.0" y="195.7" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">97.0</text>
+<rect x="644.8" y="213.1" width="25.6" height="326.9" fill="#559b86" stroke="#ffffff" stroke-width="0.8"/>
+<text x="663.6" y="175.1" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">97.2</text>
+<text x="632.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">LIBERO</text>
+<text x="632.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">10-Shot</text>
+<rect x="715.6" y="523.9" width="25.6" height="16.1" fill="#c0d4ce" stroke="#ffffff" stroke-width="0.8"/>
+<text x="728.4" y="515.9" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">4.8</text>
+<rect x="741.2" y="422.3" width="25.6" height="117.7" fill="#93beb1" stroke="#ffffff" stroke-width="0.8"/>
+<text x="748.0" y="404.3" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">35.0</text>
+<rect x="766.8" y="414.9" width="25.6" height="125.1" fill="#559b86" stroke="#ffffff" stroke-width="0.8"/>
+<text x="785.6" y="376.9" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">37.2</text>
+<text x="754.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">RoboTwin</text>
+<text x="754.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">10-Shot</text>
+<text x="1115.0" y="38.0" font-family="Georgia, Times New Roman, serif" font-size="25" font-weight="bold" text-anchor="middle" fill="#303236">Task Generalization</text>
+<rect x="890.0" y="69" width="17" height="17" rx="1.5" fill="#d2c8dd"/>
+<text x="914.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="15.5" font-weight="normal" text-anchor="start" fill="#303236">FastWAM</text>
+<rect x="1060.0" y="69" width="17" height="17" rx="1.5" fill="#af9bc8"/>
+<text x="1084.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="15.5" font-weight="normal" text-anchor="start" fill="#303236">FastWAM-Joint</text>
+<rect x="1230.0" y="69" width="17" height="17" rx="1.5" fill="#7c57ab"/>
+<text x="1254.0" y="84.0" font-family="Georgia, Times New Roman, serif" font-size="15.5" font-weight="normal" text-anchor="start" fill="#303236">Simple-WAM</text>
+<line x1="904" y1="540.0" x2="1360" y2="540.0" stroke="#e2e5e9" stroke-width="1"/>
+<text x="895.0" y="545.0" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">0</text>
+<line x1="904" y1="455.9" x2="1360" y2="455.9" stroke="#e2e5e9" stroke-width="1"/>
+<text x="895.0" y="460.9" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">25</text>
+<line x1="904" y1="371.8" x2="1360" y2="371.8" stroke="#e2e5e9" stroke-width="1"/>
+<text x="895.0" y="376.8" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">50</text>
+<line x1="904" y1="287.7" x2="1360" y2="287.7" stroke="#e2e5e9" stroke-width="1"/>
+<text x="895.0" y="292.7" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">75</text>
+<line x1="904" y1="203.6" x2="1360" y2="203.6" stroke="#e2e5e9" stroke-width="1"/>
+<text x="895.0" y="208.6" font-family="Georgia, Times New Roman, serif" font-size="14.5" font-weight="normal" text-anchor="end" fill="#555">100</text>
+<line x1="904" y1="170" x2="904" y2="540" stroke="#555" stroke-width="1.2"/>
+<line x1="904" y1="540" x2="1360" y2="540" stroke="#555" stroke-width="1.2"/>
+<text x="868.0" y="355.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="normal" text-anchor="middle" fill="#303236" transform="rotate(-90 868 355.0)">Success Rate (%)</text>
+<rect x="925.1" y="532.9" width="23.9" height="7.1" fill="#d2c8dd" stroke="#ffffff" stroke-width="0.8"/>
+<text x="937.1" y="524.9" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">2.1</text>
+<rect x="949.0" y="518.8" width="23.9" height="21.2" fill="#af9bc8" stroke="#ffffff" stroke-width="0.8"/>
+<text x="955.0" y="500.8" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">6.3</text>
+<rect x="973.0" y="506.0" width="23.9" height="34.0" fill="#7c57ab" stroke="#ffffff" stroke-width="0.8"/>
+<text x="990.9" y="468.0" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">10.1</text>
+<text x="961.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">LIBERO</text>
+<text x="961.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">w/o Video</text>
+<rect x="1039.1" y="520.2" width="23.9" height="19.8" fill="#d2c8dd" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1051.1" y="512.2" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">5.9</text>
+<rect x="1063.0" y="304.9" width="23.9" height="235.1" fill="#af9bc8" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1069.0" y="286.9" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">69.9</text>
+<rect x="1087.0" y="292.4" width="23.9" height="247.6" fill="#7c57ab" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1104.9" y="254.4" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">73.6</text>
+<text x="1075.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">LIBERO</text>
+<text x="1075.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">w/ Video</text>
+<rect x="1153.1" y="528.2" width="23.9" height="11.8" fill="#d2c8dd" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1165.1" y="520.2" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">3.5</text>
+<rect x="1177.0" y="521.8" width="23.9" height="18.2" fill="#af9bc8" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1183.0" y="503.8" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">5.4</text>
+<rect x="1201.0" y="519.1" width="23.9" height="20.9" fill="#7c57ab" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1218.9" y="481.1" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">6.2</text>
+<text x="1189.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">RoboTwin</text>
+<text x="1189.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">w/o Video</text>
+<rect x="1267.1" y="523.9" width="23.9" height="16.1" fill="#d2c8dd" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1279.1" y="515.9" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">4.8</text>
+<rect x="1291.0" y="380.9" width="23.9" height="159.1" fill="#af9bc8" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1297.0" y="362.9" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="normal" text-anchor="middle" fill="#303236">47.3</text>
+<rect x="1315.0" y="390.3" width="23.9" height="149.7" fill="#7c57ab" stroke="#ffffff" stroke-width="0.8"/>
+<text x="1332.9" y="352.3" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#303236">44.5</text>
+<text x="1303.0" y="570.0" font-family="Georgia, Times New Roman, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#303236">RoboTwin</text>
+<text x="1303.0" y="595.0" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="normal" text-anchor="middle" fill="#555">w/ Video</text>
+</svg>

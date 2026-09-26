@@ -1,0 +1,484 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.module-detail-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 88% !important;
+}
+
+.module-detail-image.action-expert-image {
+  width: 34% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .module-detail-image,
+  .module-detail-image.action-expert-image {
+    width: 100% !important;
+  }
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+/* ======= Collapsible Section (Bulma风格+三角折叠) ======= */
+.collapsible-wrapper {
+  text-align: center;
+  margin: 3rem 0 1.5rem 0;
+}
+
+.collapsible {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 700;              /* 与 .title 一致 */
+  font-size: 2rem;               /* 等同于 .title.is-3 */
+  line-height: 1.25;             /* Bulma 默认行距 */
+  color: #363636;                /* Bulma 默认字体色 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  transition: color 0.2s ease-in-out;
+}
+
+.collapsible:hover {
+  color: #276ef1; /* Bulma primary 蓝 */
+}
+
+.collapsible .triangle {
+  display: inline-block;
+  font-size: 0.9em;
+  transition: transform 0.25s ease-in-out;
+}
+
+.collapsible.is-active .triangle {
+  transform: rotate(90deg);
+}
+
+.collapsible-content {
+  display: none;
+  overflow: hidden;
+  animation: fadein 0.25s ease;
+}
+
+.section-anchor > .columns,
+.video-section > .columns {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.section-anchor > .columns > .column.is-four-fifths,
+.video-section > .columns > .column.is-four-fifths {
+  flex: none;
+  max-width: none;
+  width: 100%;
+}
+
+.section-anchor > .columns > .column > div[style*="width"],
+.video-section .video-section-heading,
+.video-section .video-toggle-row,
+.video-section .video-panel,
+#abstract .container.is-max-desktop,
+#BibTeX .container.is-max-desktop {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1120px !important;
+  width: min(1120px, calc(100vw - 4rem)) !important;
+}
+
+#abstract .columns,
+#BibTeX .columns {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#abstract .column.is-four-fifths {
+  flex: none;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.video-section {
+  padding-top: 1rem;
+}
+
+.video-section .video-section-heading {
+  margin-top: 2.75rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.video-toggle-row {
+  margin-top: 1.2rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.video-toggle {
+  align-items: center;
+  background: #f7f8fa;
+  border: 1px solid #dfe4eb;
+  border-radius: 6px;
+  color: #303236;
+  cursor: pointer;
+  display: flex;
+  font-family: "Google Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  gap: 0.65rem;
+  justify-content: flex-start;
+  line-height: 1.25;
+  min-height: 2.45rem;
+  padding: 0.55rem 0.8rem;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  width: 100%;
+}
+
+.video-toggle:hover,
+.video-toggle.is-active {
+  background: #eef4ff;
+  border-color: #b8d0ff;
+  color: #276ef1;
+}
+
+.video-toggle-icon {
+  border-bottom: 0.36em solid transparent;
+  border-left: 0.52em solid currentColor;
+  border-top: 0.36em solid transparent;
+  flex: 0 0 auto;
+  height: 0;
+  transition: transform 0.2s ease;
+  width: 0;
+}
+
+.video-toggle.is-active .video-toggle-icon {
+  transform: rotate(90deg);
+}
+
+.video-toggle-label {
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+}
+
+.video-toggle::after {
+  background: #fff;
+  border: 1px solid #d5dbe3;
+  border-radius: 999px;
+  color: #555;
+  content: "Show";
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.35rem 0.55rem;
+}
+
+.video-toggle.is-active::after {
+  border-color: #b8d0ff;
+  color: #276ef1;
+  content: "Hide";
+}
+
+.video-panel {
+  display: none;
+  margin-bottom: 1.75rem !important;
+  text-align: left;
+}
+
+.video-panel.is-open {
+  display: block;
+}
+
+.video-panel h3 {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  margin-top: 1.75rem;
+}
+
+.video-panel .columns.is-multiline {
+  align-items: stretch;
+  margin-left: -0.6rem;
+  margin-right: -0.6rem;
+}
+
+.video-panel .column.is-one-quarter {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+}
+
+.video-panel video {
+  aspect-ratio: 1 / 1;
+  background: #111;
+  border-radius: 6px;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.mikasa-video-panel video {
+  aspect-ratio: auto !important;
+  background: transparent;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: initial;
+}
+
+.imagination-video-panel video {
+  aspect-ratio: auto !important;
+  background: transparent;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: initial;
+}
+
+.imagination-video-panel .column.is-one-quarter {
+  flex: none;
+  justify-content: flex-start;
+  width: 33.3333%;
+}
+
+.mikasa-video-panel .column.is-one-quarter {
+  flex: none;
+  justify-content: flex-start;
+  width: 33.3333%;
+}
+
+@media screen and (max-width: 768px) {
+  .imagination-video-panel .column.is-one-quarter,
+  .mikasa-video-panel .column.is-one-quarter {
+    width: 100%;
+  }
+}
+
+.video-panel .column.is-one-quarter p {
+  color: #363636;
+  line-height: 1.35;
+  margin-top: 0.45rem;
+  min-height: 2.7em;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.calvin-video-panel .column.is-one-quarter p {
+  line-height: 1.45;
+  min-height: 7.25em;
+  text-align: left;
+}
+
+.calvin-task-arrow {
+  color: #777;
+  display: inline-block;
+  margin: 0 0.35rem;
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    padding-left: 13rem;
+  }
+
+  .top-more-research {
+    left: 2rem;
+    position: fixed;
+    top: 1.5rem;
+  }
+
+  .section-anchor > .columns > .column > div[style*="width"],
+  .video-section .video-section-heading,
+  .video-section .video-toggle-row,
+  .video-section .video-panel,
+  #abstract .container.is-max-desktop,
+  #BibTeX .container.is-max-desktop {
+    width: min(1120px, calc(100vw - 17rem)) !important;
+  }
+
+}
+
+@media screen and (min-width: 900px) and (max-width: 1279px) {
+  .section-anchor > .columns > .column > div[style*="width"],
+  .video-section .video-section-heading,
+  .video-section .video-toggle-row,
+  .video-section .video-panel,
+  #abstract .container.is-max-desktop,
+  #BibTeX .container.is-max-desktop {
+    width: min(1120px, calc(100vw - 15.5rem)) !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-anchor > .columns > .column > div[style*="width"],
+  .video-section .video-section-heading,
+  .video-section .video-toggle-row,
+  .video-section .video-panel,
+  #abstract .container.is-max-desktop,
+  #BibTeX .container.is-max-desktop {
+    width: calc(100vw - 2rem) !important;
+  }
+
+  .video-panel .column.is-one-quarter p {
+    min-height: 0;
+  }
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

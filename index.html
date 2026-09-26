@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Simple-WAM: What Makes World Action Models Generalize? An Empirical Study of Test-Time Future Modeling">
+  <meta name="keywords" content="World Action Model, WAM, Robot Learning, Embodied AI, Future Modeling, Generalization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Simple-WAM: What Makes World Action Models Generalize?">
+  <meta property="og:description" content="An empirical study of test-time future modeling for generalizable robot manipulation.">
+  <meta property="og:image" content="https://simple-wam.github.io/assets/images/teaser.webp">
+  <meta property="og:url" content="https://simple-wam.github.io/">
+  <title>Simple-WAM</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/simple-wam.css">
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/simple-wam.js"></script>
+</head>
+<body>
+
+<nav class="page-toc" aria-label="Section navigation">
+  <!-- <a href="#main-idea">Main Idea</a> -->
+  <a href="#abstract">1 Abstract</a>
+  <a href="#findings">2 Findings</a>
+  <a class="toc-sub" href="#finding-one">2.1 Future Matters</a>
+  <a class="toc-sub" href="#finding-two">2.2 One Pass Suffices</a>
+  <a href="#method">3 Method</a>
+  <a href="#experiments">4 Experiments</a>
+  <a class="toc-sub" href="#experiment-overview">4.1 Overview</a>
+  <a class="toc-sub" href="#quantitative-results">4.2 Results</a>
+  <a class="toc-sub" href="#videos">4.3 Qualitative</a>
+  <a href="#BibTeX">BibTeX</a>
+</nav>
+
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">What Makes World Action Models Generalize?<br><span class="publication-subtitle">An Empirical Study of Test-Time Future Modeling</span></h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://github.com/zrporz" target="_blank" rel="noopener noreferrer">Renping Zhou</a><sup>1,*</sup>,</span>
+            <span class="author-block"><a href="https://nzl-thu.github.io/" target="_blank" rel="noopener noreferrer">Zanlin Ni</a><sup>1,*,&dagger;</sup>,</span>
+            <span class="author-block"><a href="https://github.com/fanzh03" target="_blank" rel="noopener noreferrer">Zihao Fan</a><sup>2,*</sup>,</span>
+            <span class="author-block"><a href="https://github.com/lenfgh/" target="_blank" rel="noopener noreferrer">Guohao Fu</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://lzy-tony.github.io/" target="_blank" rel="noopener noreferrer">Zeyu Liu</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://shihao1895.github.io/" target="_blank" rel="noopener noreferrer">Hao Shi</a><sup>1</sup>,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Jie Zhang<sup>1</sup>,</span>
+            <span class="author-block"><a href="https://benechen.github.io/" target="_blank" rel="noopener noreferrer">Chi Bene Chen</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=Q9cLkdcAAAAJ" target="_blank" rel="noopener noreferrer">Yang Yue</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://xueyangfu.github.io/" target="_blank" rel="noopener noreferrer">Xueyang Fu</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://www.gaohuang.net/" target="_blank" rel="noopener noreferrer">Gao Huang</a><sup>1,&#9993;</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors affiliation-row">
+            <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+            <span class="author-block"><sup>2</sup>University of Science and Technology of China,</span>
+            <span class="author-block"><sup>3</sup>Beijing Institute of Technology</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+            <span class="author-block"><sup>&dagger;</sup>Project leader</span>
+            <span class="author-block"><sup>&#9993;</sup>Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="./assets/files/simple-wam-paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="external-link button is-normal is-rounded is-dark" aria-label="arXiv">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv (coming soon)</span>
+                  </span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+
+                  <span class="external-link button is-normal is-rounded is-dark"  aria-label="Code">
+                    <span class="icon"><i class="fab fa-github"></i></span><span>Code (coming soon)</span>
+                  </span>
+                </a>
+              </span>
+              <span class="link-block">
+                <span class="external-link button is-normal is-rounded is-dark" aria-label="Hugging Face models, coming soon" aria-disabled="true">
+                  <span class="icon huggingface-mark" aria-hidden="true">&#129303;</span><span>Models (coming soon)</span>
+                </span>
+              </span>
+              <span class="link-block">
+                <a href="#videos" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-video"></i></span><span>Videos</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <div class="tldr-box">
+            <p><b>TL;DR:</b> Future conditioning, rather than clean future generation, is what makes World Action Models generalize. Simple-WAM uses a single pass over fully noised future tokens, achieving stronger generalization across simulation and real-world tasks while retaining efficiency comparable to Latent WAMs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser section-anchor" id="main-idea">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <div style="width:80%; margin:0 auto;">
+        <!-- <h2 class="title is-3 mb-5 has-text-left">Main Idea</h2> -->
+        <img src="./assets/images/teaser.webp" alt="Simple-WAM generalization study and its two main findings" style="width:100%; height:auto; margin-bottom:1rem;">
+        <p class="has-text-justified is-size-6" style="margin-top:1rem;"><b>What makes World Action Models generalize?</b> Explicit WAMs repeatedly denoise future frames at inference, while Latent WAMs remove future modeling for efficiency. We find that future conditioning is essential for generalization, but clean future generation is not: a single pass over fully noised future tokens is already sufficient. Based on this finding, <b>Simple-WAM</b> retains the generalization benefit of explicit future modeling at a cost close to latent inference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-anchor" id="abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-left">1 Abstract</h2>
+        <div class="content has-text-justified">
+          <p>World action models (WAMs) predict the future alongside actions during <em>training</em>. Due to the heavy computation cost of video denoising, whether the future must still be generated during <em>inference</em> is disputed: Explicit WAMs denoise it into clean frames along with every action chunk, whereas Latent WAMs discard it entirely for acceleration.</p>
+          <p>We conduct an empirical comparison of the two paradigms on robot manipulation using a matched backbone, data, budget, and protocol, varying only whether the action expert conditions on the future. Latent WAMs perform on par with explicit ones on in-distribution tasks, but fall considerably behind on all three generalization axes. Further analysis shows that the gap arises almost entirely from the first denoising step: the benefit comes from <em>preparing</em> the future, not <em>generating</em> it.</p>
+          <p>We therefore propose <b>Simple-WAM</b>, which simplifies future modeling into a single forward pass of fully noised video tokens and adapts the training-time noise schedule to this inference behavior. Across simulation and real-world tasks, Simple-WAM achieves the best of both worlds, leading explicit WAMs in generalization performance with efficiency comparable to Latent WAMs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser section-anchor findings-heading" id="findings">
+  <div class="columns is-centered"><div class="column is-four-fifths has-text-centered"><div style="width:80%; margin:0 auto;"><h2 class="title is-3 mb-5 has-text-left">2 Empirical Findings</h2></div></div></div>
+</section>
+
+<section class="hero teaser section-anchor finding-section" id="finding-one">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <div style="width:80%; margin:0 auto;">
+        <header class="finding-header">
+          <span class="finding-number">Finding 2.1</span>
+          <h3 class="finding-title">Generalization Deteriorates without Inference-Time Future Modeling</h3>
+        </header>
+        <img class="narrow-result-image" src="./assets/images/finding1_bars_four-dimensions.webp" alt="Explicit and latent WAM success rates under in-distribution and three generalization settings" style="width:60%; height:auto; margin-bottom:1rem;">
+        <p class="finding-summary has-text-justified is-size-6">Explicit and latent WAMs are within 0.9 points on in-distribution tasks, yet they separate consistently under environmental perturbations, reduced demonstrations, and held-out tasks. The latent policy loses 14.0 points, 8.5 points, and 34.1 points on the three axes, respectively. Test-time future conditioning is therefore an important source of generalizable temporal information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser section-anchor finding-section" id="finding-two">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <div style="width:80%; margin:0 auto;">
+        <header class="finding-header">
+          <span class="finding-number">Finding 2.2</span>
+          <h3 class="finding-title">A Single Pass over a Fully Noised Future Is Sufficient</h3>
+        </header>
+        <img class="narrow-result-image" src="./assets/images/finding2_points_compact.webp" alt="Generalization performance across future-video denoising steps" style="width:70%; height:auto; margin-bottom:1rem;">
+        <p class="finding-summary has-text-justified is-size-6">Most of the generalization benefit appears at the first video-model pass. Future video tokens can remain at pure Gaussian noise: the action expert needs the future-conditioned feature, rather than a decoded clean prediction of the future.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser section-anchor" id="method">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <div style="width:80%; margin:0 auto;">
+        <h2 class="title is-3 mb-5 has-text-left">3 Method</h2>
+        <img src="./assets/images/model.webp" alt="Comparison of Explicit WAM, Latent WAM, and Simple-WAM" style="width:90%; height:auto; margin-bottom:1rem;">
+        <p class="has-text-justified is-size-6" style="margin-top:1rem; margin-bottom:1.25rem;"><b>One pass over a fully noised future.</b> At inference, Simple-WAM keeps future video tokens at Gaussian noise and runs the video expert once. The resulting future-conditioned feature is reused by every action denoising step.</p>
+        <p class="has-text-justified is-size-6" style="margin-bottom:2.5rem;"><b>A mixed training schedule.</b> Training samples the fully noised endpoint with probability <i>p</i> = 0.5 while retaining the original flow-time schedule for the remaining samples. This aligns training with the single flow time used at inference without adding modules or objectives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser section-anchor" id="experiments">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <div style="width:80%; margin:0 auto;">
+        <h2 class="title is-3 mb-5 has-text-left">4 Experiments</h2>
+        <p class="has-text-justified is-size-6">We evaluate Simple-WAM along environmental perturbation, data efficiency, and task generalization in simulation and on a real ALOHA dual-arm robot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-anchor experiment-subsection" id="experiment-overview">
+  <div class="experiment-content">
+    <h3 class="title is-4 has-text-left">4.1 Overview</h3>
+    <!-- <p class="has-text-justified is-size-6">Our simulation study spans three complementary benchmarks. LIBERO-Plus evaluates robustness to seven environmental changes without retraining. LIBERO measures low-data learning and generalization to held-out task suites. RoboTwin 2.0 extends the same study to diverse bimanual manipulation tasks.</p> -->
+    <div class="benchmark-overview-grid">
+      <article class="benchmark-card environment-card"><h4>LIBERO-Plus</h4><p>Seven perturbation factors: robot initialization, camera viewpoint, language, sensor noise, background, object layout, and lighting.</p></article>
+      <article class="benchmark-card data-card"><h4>LIBERO</h4><p>Data efficiency at 5 and 10 demonstrations per task, and task generalization with and without action-free video.</p></article>
+      <article class="benchmark-card task-card"><h4>RoboTwin 2.0</h4><p>Bimanual manipulation under 10-shot learning and held-out tasks, with held-out settings matching LIBERO.</p></article>
+    </div>
+    <figure class="overview-real-world-figure">
+      <img src="./assets/images/real-world-tasks.webp" alt="Real-world robot tasks and evaluation conditions">
+      <figcaption><b>Real-world setup.</b> Four training tasks, environmental perturbations, and the held-out <i>Store in Order</i> task on an ALOHA dual-arm platform.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section-anchor experiment-subsection" id="quantitative-results">
+  <div class="experiment-content">
+    <h3 class="title is-4 has-text-left">4.2 Quantitative Results</h3>
+    <!-- <p class="has-text-justified is-size-6">Simple-WAM is compared with the matched latent model, FastWAM, and the explicit model, FastWAM-Joint.</p> -->
+    <figure class="quantitative-figure-card simulation-results-card simulation-table-card">
+      <div class="simulation-table-scroll">
+        <table class="simulation-results-table" aria-label="Simulation success rates across three generalization dimensions">
+          <thead>
+            <tr>
+              <th rowspan="2" scope="col">Method</th>
+              <th class="environment-group group-start" colspan="1" scope="colgroup">Environmental Perturbation</th>
+              <th class="data-group group-start" colspan="3" scope="colgroup">Data Efficiency</th>
+              <th class="task-group group-start" colspan="4" scope="colgroup">Task Generalization</th>
+            </tr>
+            <tr>
+              <th class="environment-subhead group-start" scope="col"><span>LIBERO-Plus</span><small>Average</small></th>
+              <th class="data-subhead group-start" scope="col"><span>LIBERO</span><small>5-Shot</small></th>
+              <th class="data-subhead" scope="col"><span>LIBERO</span><small>10-Shot</small></th>
+              <th class="data-subhead" scope="col"><span>RoboTwin</span><small>10-Shot</small></th>
+              <th class="task-subhead group-start" scope="col"><span>LIBERO</span><small>w/o Video</small></th>
+              <th class="task-subhead" scope="col"><span>LIBERO</span><small>w/ Video</small></th>
+              <th class="task-subhead" scope="col"><span>RoboTwin</span><small>w/o Video</small></th>
+              <th class="task-subhead" scope="col"><span>RoboTwin</span><small>w/ Video</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">FastWAM</th>
+              <td class="group-start">53.8</td>
+              <td class="group-start">78.2</td><td>88.5</td><td>4.8</td>
+              <td class="group-start">2.1</td><td>5.9</td><td>3.5</td><td>4.8</td>
+            </tr>
+            <tr>
+              <th scope="row">FastWAM-Joint</th>
+              <td class="group-start">67.7</td>
+              <td class="group-start">91.5</td><td>97.0</td><td>35.0</td>
+              <td class="group-start">6.3</td><td>69.9</td><td>5.4</td><td class="best-result">47.3</td>
+            </tr>
+            <tr class="simple-wam-row">
+              <th scope="row">Simple-WAM</th>
+              <td class="group-start best-result">79.5</td>
+              <td class="group-start best-result">92.4</td><td class="best-result">97.2</td><td class="best-result">37.2</td>
+              <td class="group-start best-result">10.1</td><td class="best-result">73.6</td><td class="best-result">6.2</td><td>44.5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption><b>Simulation results.</b> Success rates (%) on LIBERO-Plus, LIBERO, and RoboTwin 2.0. Bold values indicate the best result in each setting.</figcaption>
+    </figure>
+    <div class="quantitative-secondary-grid">
+      <figure class="quantitative-figure-card real-world-results-card">
+        <div class="quantitative-secondary-media">
+          <img src="./assets/images/real_world_results_2x2.svg" alt="Real-world robot evaluation results arranged in a two-by-two grid">
+        </div>
+        <figcaption><b>Real-world results.</b> Success rate across in-distribution tasks, environmental perturbations, data efficiency, and task generalization.</figcaption>
+      </figure>
+      <figure class="efficiency-figure-card">
+        <div class="quantitative-secondary-media">
+          <img src="./assets/images/efficiency.svg" alt="Inference latency and generalization performance">
+        </div>
+        <figcaption><b>Efficiency.</b> Per-chunk latency and average success rate over four generalization settings. Simple-WAM runs at 74.7 ms per action chunk, 3.8× faster than FastWAM-Joint.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section-anchor experiment-subsection" id="videos">
+  <div class="experiment-content">
+    <h3 class="title is-4 has-text-left">4.3 Qualitative Results</h3>
+    <!-- <p class="has-text-justified is-size-6">Qualitative rollouts are organized along the same three generalization dimensions in simulation and the real world.</p> -->
+  </div>
+</section>
+
+<section class="video-section section-anchor" id="environment-videos">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <div class="video-section-heading"><h2 class="title is-4 mb-5 has-text-left">Environmental Perturbation</h2></div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">LIBERO-Plus</span></button></div>
+      <div class="video-panel demo-video-panel">
+        <div class="demo-subsection"><h3 class="demo-subsection-title">Robot Initial State</h3><div class="demo-grid">
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/robot-initial-state/trial-1.mp4" type="video/mp4"></video><figcaption>Example 1</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/robot-initial-state/trial-2.mp4" type="video/mp4"></video><figcaption>Example 2</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/robot-initial-state/trial-3.mp4" type="video/mp4"></video><figcaption>Example 3</figcaption></figure>
+        </div></div>
+        <div class="demo-subsection"><h3 class="demo-subsection-title">Camera Viewpoint</h3><div class="demo-grid">
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/camera-viewpoint/trial-1.mp4" type="video/mp4"></video><figcaption>Example 1</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/camera-viewpoint/trial-2.mp4" type="video/mp4"></video><figcaption>Example 2</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/camera-viewpoint/trial-3.mp4" type="video/mp4"></video><figcaption>Example 3</figcaption></figure>
+        </div></div>
+        <div class="demo-subsection"><h3 class="demo-subsection-title">Language Instruction</h3><div class="demo-grid">
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/language-instruction/trial-1.mp4" type="video/mp4"></video><figcaption class="language-prompt-caption"><b>Prompt 1</b>“Could you move the black bowl from the stove to the plate?”</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/language-instruction/trial-2.mp4" type="video/mp4"></video><figcaption class="language-prompt-caption"><b>Prompt 2</b>“Lift the darkcolored rounded container situated beside the container holding baked sweet treats and set it down upon the flat circular dish.”</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/language-instruction/trial-3.mp4" type="video/mp4"></video><figcaption class="language-prompt-caption"><b>Prompt 3</b>“Put the black bowl from the wooden cabinet onto the plate.”</figcaption></figure>
+        </div></div>
+        <div class="demo-subsection"><h3 class="demo-subsection-title">Sensor Noise</h3><div class="demo-grid">
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/sensor-noise/trial-1.mp4" type="video/mp4"></video><figcaption>Example 1</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/sensor-noise/trial-2.mp4" type="video/mp4"></video><figcaption>Example 2</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/sensor-noise/trial-3.mp4" type="video/mp4"></video><figcaption>Example 3</figcaption></figure>
+        </div></div>
+        <div class="demo-subsection"><h3 class="demo-subsection-title">Background Texture</h3><div class="demo-grid">
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/background/trial-1.mp4" type="video/mp4"></video><figcaption>Example 1</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/background/trial-2.mp4" type="video/mp4"></video><figcaption>Example 2</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/background/trial-3.mp4" type="video/mp4"></video><figcaption>Example 3</figcaption></figure>
+        </div></div>
+        <div class="demo-subsection"><h3 class="demo-subsection-title">Object Layout</h3><div class="demo-grid">
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/object-layout/trial-1.mp4" type="video/mp4"></video><figcaption>Example 1</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/object-layout/trial-2.mp4" type="video/mp4"></video><figcaption>Example 2</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/object-layout/trial-3.mp4" type="video/mp4"></video><figcaption>Example 3</figcaption></figure>
+        </div></div>
+        <div class="demo-subsection"><h3 class="demo-subsection-title">Lighting Condition</h3><div class="demo-grid">
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/lighting/trial-1.mp4" type="video/mp4"></video><figcaption>Example 1</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/lighting/trial-2.mp4" type="video/mp4"></video><figcaption>Example 2</figcaption></figure>
+          <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/libero-plus/lighting/trial-3.mp4" type="video/mp4"></video><figcaption>Example 3</figcaption></figure>
+        </div></div>
+      </div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">Real World</span></button></div>
+      <div class="video-panel demo-video-panel">
+        <figure class="demo-card real-world-demo">
+          <video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/environment/real-world.mp4" type="video/mp4"></video>
+          <figcaption class="real-world-label-grid two-up">
+            <span><b>Task 1</b>Stack the Bowl</span>
+            <span><b>Task 2</b>Move Forward</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section section-anchor" id="data-videos">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <div class="video-section-heading"><h2 class="title is-4 mb-5 has-text-left">Data Efficiency</h2></div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">LIBERO · 10-Shot</span></button></div>
+      <div class="video-panel demo-video-panel"><div class="demo-grid">
+        <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/data/libero/open_the_middle_drawer_of_the_cabinet.mp4" type="video/mp4"></video><figcaption>Open the Middle Drawer</figcaption></figure>
+        <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/data/libero/pick_up_the_alphabet_soup_and_place_it_in_the_basket.mp4" type="video/mp4"></video><figcaption>Alphabet Soup to Basket</figcaption></figure>
+        <figure class="demo-card"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/data/libero/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate.mp4" type="video/mp4"></video><figcaption>Black Bowl to Plate</figcaption></figure>
+      </div></div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">RoboTwin 2.0 · 10-Shot</span></button></div>
+      <div class="video-panel demo-video-panel"><div class="demo-grid">
+        <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/data/robotwin/adjust_bottle.mp4" type="video/mp4"></video><figcaption>Adjust Bottle</figcaption></figure>
+        <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/data/robotwin/hanging_mug.mp4" type="video/mp4"></video><figcaption>Hang the Mug</figcaption></figure>
+        <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/data/robotwin/open_laptop.mp4" type="video/mp4"></video><figcaption>Open Laptop</figcaption></figure>
+      </div></div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">Real World</span></button></div>
+      <div class="video-panel demo-video-panel">
+        <figure class="demo-card real-world-demo data-world-demo">
+          <div class="data-video-matrix" aria-label="Rows compare Latent WAM and Simple-WAM; columns compare 200 and 50 demonstrations">
+            <div class="data-column-headers" aria-hidden="true">
+              <span><b>Data</b>200 Demonstrations</span>
+              <span><b>Data</b>50 Demonstrations</span>
+            </div>
+            <div class="data-row-headers" aria-hidden="true">
+              <span>Fast-WAM</span>
+              <span>Simple-WAM</span>
+            </div>
+            <div class="data-video-stage">
+              <video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/data/real-world.mp4" type="video/mp4"></video>
+              <span class="matrix-outcome success top-left" aria-label="Latent WAM with 200 demonstrations: Success"><b>✓</b>Success</span>
+              <span class="matrix-outcome failure top-right" aria-label="Latent WAM with 50 demonstrations: Failure"><b>×</b>Fail</span>
+              <span class="matrix-outcome success bottom-left" aria-label="Simple-WAM with 200 demonstrations: Success"><b>✓</b>Success</span>
+              <span class="matrix-outcome success bottom-right" aria-label="Simple-WAM with 50 demonstrations: Success"><b>✓</b>Success</span>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section section-anchor" id="task-videos">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths has-text-centered">
+      <div class="video-section-heading"><h2 class="title is-4 mb-5 has-text-left">Task Generalization</h2></div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">LIBERO</span></button></div>
+      <div class="video-panel demo-video-panel">
+        <div class="comparison-group"><h3 class="demo-subsection-title">Put the Bowl on the Stove</h3><div class="demo-grid paired">
+          <figure class="demo-card"><div class="result-video-wrap"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/libero/without-video/put_the_bowl_on_the_stove-False.mp4" type="video/mp4"></video><span class="matrix-outcome failure demo-outcome"><b>×</b>Fail</span></div><figcaption>Without Action-Free Video</figcaption></figure>
+          <figure class="demo-card"><div class="result-video-wrap"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/libero/with-video/put_the_bowl_on_the_stove.mp4" type="video/mp4"></video><span class="matrix-outcome success demo-outcome"><b>✓</b>Success</span></div><figcaption>With Action-Free Video</figcaption></figure>
+        </div></div>
+        <div class="comparison-group"><h3 class="demo-subsection-title">Alphabet Soup to Basket</h3><div class="demo-grid paired">
+          <figure class="demo-card"><div class="result-video-wrap"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/libero/without-video/pick_up_the_alphabet_soup_and_place_it_in_the_basket.mp4" type="video/mp4"></video><span class="matrix-outcome failure demo-outcome"><b>×</b>Fail</span></div><figcaption>Without Action-Free Video</figcaption></figure>
+          <figure class="demo-card"><div class="result-video-wrap"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/libero/with-video/pick_up_the_alphabet_soup_and_place_it_in_the_basket.mp4" type="video/mp4"></video><span class="matrix-outcome success demo-outcome"><b>✓</b>Success</span></div><figcaption>With Action-Free Video</figcaption></figure>
+        </div></div>
+        <div class="comparison-group"><h3 class="demo-subsection-title">Black Bowl to Plate</h3><div class="demo-grid paired">
+          <figure class="demo-card"><div class="result-video-wrap"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/libero/without-video/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate.mp4" type="video/mp4"></video><span class="matrix-outcome success demo-outcome"><b>✓</b>Success</span></div><figcaption>Without Action-Free Video</figcaption></figure>
+          <figure class="demo-card"><div class="result-video-wrap"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/libero/with-video/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate.mp4" type="video/mp4"></video><span class="matrix-outcome success demo-outcome"><b>✓</b>Success</span></div><figcaption>With Action-Free Video</figcaption></figure>
+        </div></div>
+      </div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">RoboTwin 2.0</span></button></div>
+      <div class="video-panel demo-video-panel">
+        <div class="comparison-group"><h3 class="demo-subsection-title">Beat Block with Hammer</h3><div class="demo-grid paired">
+          <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/robotwin/without-video/beat_block_hammer.mp4" type="video/mp4"></video><figcaption>Without Action-Free Video</figcaption></figure>
+          <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/robotwin/with-video/beat_block_hammer.mp4" type="video/mp4"></video><figcaption>With Action-Free Video</figcaption></figure>
+        </div></div>
+        <div class="comparison-group"><h3 class="demo-subsection-title">Blocks Ranking</h3><div class="demo-grid paired">
+          <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/robotwin/without-video/blocks_ranking_rgb.mp4" type="video/mp4"></video><figcaption>Without Action-Free Video</figcaption></figure>
+          <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/robotwin/with-video/blocks_ranking_rgb.mp4" type="video/mp4"></video><figcaption>With Action-Free Video</figcaption></figure>
+        </div></div>
+        <div class="comparison-group"><h3 class="demo-subsection-title">Place Cans in Plastic Box</h3><div class="demo-grid paired">
+          <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/robotwin/without-video/place_cans_plasticbox.mp4" type="video/mp4"></video><figcaption>Without Action-Free Video</figcaption></figure>
+          <figure class="demo-card robotwin"><video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/robotwin/with-video/place_cans_plasticbox.mp4" type="video/mp4"></video><figcaption>With Action-Free Video</figcaption></figure>
+        </div></div>
+      </div>
+
+      <div class="video-toggle-row"><button class="video-toggle" type="button" aria-expanded="false"><span class="video-toggle-icon" aria-hidden="true"></span><span class="video-toggle-label">Real World</span></button></div>
+      <div class="video-panel demo-video-panel">
+        <figure class="demo-card real-world-demo">
+          <p class="real-world-task-name"><b>Unseen Task</b>Pick Up the Object and Place It onto the Plate</p>
+          <video controls muted loop playsinline preload="metadata"><source src="./assets/videos/demos/task/real-world.mp4" type="video/mp4"></video>
+          <figcaption class="task-generalization-caption">
+            <div class="real-world-label-grid two-up prompt-grid">
+              <span><b>Prompt</b>“Pick up the object and place it onto the plate. Follow this order: <i class="word-red">red</i>, <i class="word-yellow">yellow</i>, <i class="word-green">green</i>.”</span>
+              <span><b>Prompt</b>“Pick up the object and place it onto the plate. Follow this order: <i class="word-yellow">yellow</i>, <i class="word-green">green</i>, <i class="word-red">red</i>.”</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-anchor" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-heading"><h2 class="title">BibTeX</h2><button class="button is-small is-rounded is-dark copy-bibtex" type="button">Copy</button></div>
+    <pre><code id="bibtex-code">@article{zhou2026simplewam,
+  title={What Makes World Action Models Generalize? An Empirical Study of Test-Time Future Modeling},
+  author={Zhou, Renping and Ni, Zanlin and Fan, Zihao and Fu, Guohao and Liu, Zeyu and Shi, Hao and Zhang, Jie and Chen, Chi Bene and Yue, Yang and Fu, Xueyang and Huang, Gao},
+  journal={arXiv preprint},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content"><p>This website refers to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
